@@ -1,0 +1,14 @@
+{
+  "name": "drake-handle-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Editable handle-only real-time chat with a Drake-inspired industrial UI.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
