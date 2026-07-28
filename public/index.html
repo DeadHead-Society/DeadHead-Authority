@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drake Relay // Handle Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="terminal-shell">
+    <header class="top-bar">
+      <div>
+        <span class="eyebrow">DRAKE RELAY TERMINAL</span>
+        <h1>LOCAL COMMS // NL-MP</h1>
+      </div>
+      <div class="status"><span class="status-light"></span>CHANNEL LIVE</div>
+    </header>
+
+    <section class="grid-layout">
+      <aside class="panel roster-panel">
+        <div class="panel-title">ACTIVE HANDLES</div>
+        <ul id="users" class="user-list"></ul>
+        <div class="readout">NO TELEMETRY PROFILE<br>HANDLE IDENTIFICATION ONLY</div>
+      </aside>
+
+      <section class="panel chat-panel">
+        <div id="joinView" class="join-view">
+          <p class="warning">UNREGISTERED SIGNAL DETECTED</p>
+          <label for="handle">ENTER HANDLE</label>
+          <div class="input-row">
+            <input id="handle" maxlength="24" autocomplete="nickname" placeholder="Example: ScrapRunner">
+            <button id="joinButton" type="button">LINK</button>
+          </div>
+          <p id="joinError" class="error" aria-live="polite"></p>
+        </div>
+
+        <div id="chatView" class="chat-view hidden">
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <form id="messageForm" class="message-form">
+            <span class="prompt">&gt;</span>
+            <input id="message" maxlength="500" autocomplete="off" placeholder="Transmit message...">
+            <button type="submit">SEND</button>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <span>THE VERSE MADE US THIS WAY</span>
+      <span>BUILD: DDHS-NL-MP</span>
+    </footer>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
